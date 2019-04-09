@@ -39,6 +39,8 @@ Initialize mpesa library
       }
      
   # register url
+  The Register URL API under C2B APIs. It is the first half of the C2B API for receiving payment notifications to your paybill. This API enables you to register the callback URLs via which you shall receive payment notifications for payments to your paybill/till number. The URLs are used by the C2B payment simulation API for sending the transaction details to you.
+  
      print_r( $mpesa->register_url());   
      //Success Result 
      {
@@ -48,6 +50,8 @@ Initialize mpesa library
      }
      
   # c2b
+  This API is used for payment requests from clients to your API. You can use the sandbox to simulates a payment made from the client phone's STK/SIM Toolkit menu, and enables you to receive the payment requests in real time. It uses URL as described in the Register URL API and requires the URLs registered to work. For better understanding of this API, consider going through the Register URL section above to better understand the process flow of a C2B transaction and the requirements of URL
+  
      print_r($mpesa->c2b('120','254708374149','account'));
      //Success Result 
        { 
