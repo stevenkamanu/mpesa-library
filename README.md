@@ -62,15 +62,87 @@ Mpesa Api library
      
   #  b2b
      print_r($mpesa->b2b('10000','BusinessPayBill','60000','4','4','paytest','cool'));
+    //Success Result 
+     {
+      "ConversationID":  "AG_20180326_00005ca7f7c21d608166",
+       "OriginatorConversationID":  "12363-1328499-6",
+       "ResponseCode":  "0",
+       "ResponseDescription":  "Accept the service request successfully."
+      }
+      
+     //callback
+    {
+     "Result":
+     {
+    "ResultType":0,
+    "ResultCode":0,
+    "ResultDesc":"The service request has been accepted successfully.",
+    "OriginatorConversationID":"8551-61996-3",
+    "ConversationID":"AG_20170727_00006baee344f4ce0796",
+    "TransactionID":"LGR519G2QV",
+    "ResultParameters":
+    {
+    "ResultParameter":
+    [
+        {
+    "Key":"InitiatorAccountCurrentBalance",
+    "Value":"{ Amount={BasicAmount=46713.00, MinimumAmount=4671300, CurrencyCode=KES}}"
+     },
+     {
+    "Key":"DebitAccountCurrentBalance",
+    "Value":"{Amount={BasicAmount=46713.00, MinimumAmount=4671300, CurrencyCode=KES}}"
+     },
+     {
+    "Key":"Amount",
+    "Value":10
+     },
+     {
+    Key":"DebitPartyAffectedAccountBalance",
+    "Value":"Working Account|KES|46713.00|46713.00|0.00|0.00"
+     },
+     {
+    "Key":"TransCompletedTime",
+    "Value:"20170727102524
+     },
+     {
+    "Key":"DebitPartyCharges",
+    "Value":"Business Pay Bill Charge|KES|77.00"
+     },
+     {
+    "Key":"ReceiverPartyPublicName",
+    "Value":"603094 - Safaricom3117"
+     },
+     {
+    "Key":"Currency",
+    "Value":"KES"
+     }
+     ]
+    },
+    "ReferenceData":
+    {
+    ReferenceItem":
+     [
+    {
+     "Key":"BillReferenceNumber",
+     "Value":"aaa"
+    },
+    {
+     "Key":"QueueTimeoutURL",
+      "Value":"https://internalsandbox.safaricom.co.ke/mpesa/b2bresults/v1/submit"
+     }
+     ]
+     }
+    }
+   }
+      
+   # reversal
+     print_r( $mpesa->reversal('2','254708374149','1','NCR7S1UXBT','PAY NOW VIA WASKSOFT'));
      
   # accountbalance
      print_r($mpesa->accountbalance('600443','4','remarks'));
      
-  # reversal
-     print_r( $mpesa->reversal('2','254708374149','1','NCR7S1UXBT','PAY NOW VIA WASKSOFT'));
-     
   # transaction status
      print_r($mpesa->transaction_status('NCR7S1UXBT','254708374149','4','apitest'));
   
-# installation  
+  # installation  
 
