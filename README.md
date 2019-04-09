@@ -61,6 +61,8 @@ Initialize mpesa library
        }
      
    # b2c
+   B2C simply means Business to Customer. This is a transaction that comes from a Business (Bank) to Customer (Client). This API enables a Businesses or Organization to pay their customers. The most common reasons a business can pay their customer include salary payments, promotion payments or normal business payments (e.g. transfers from bank to mobile). Each of these scenarios has their own unique characteristics, but all lie under the B2C (Business to Customer) API category.
+   
      print_r($mpesa->b2c('20','BusinessPayment','254708374149','payment'));
     //Success Result 
      { 
@@ -71,6 +73,15 @@ Initialize mpesa library
      }
    
    # b2b
+   This API enables a Business or Organization to perform transactions between each other. The transaction flow is the same as the B2C API transaction flow, but this time the Credit Party is another Business/Company/Organization. It requires the same credentials and information as the B2C API.
+
+Currently the B2B API allows an organization to perform 5 types of transfers:
+Business Pay Bill: This is a transfer of funds from one Organization's Working Account to another Organization's Utility Account.
+Business Buy Goods: A transfer of funds from one Organization's Working Account to another Organization's Merchant Account.
+Disburse Funds To Business: A transfer of funds from one Organization's Utility Account to another Organization's Working Account.
+Business To Business Transfer: A transfer of funds from one Organization's Working Account to another Organization's Working Account.
+Merchant To Merchant Transfer: A transfer of funds from one Organization's Merchant Account to another Organization's Merchant Account.
+
     print_r($mpesa->b2b('10000','BusinessPayBill','60000','4','4','paytest','cool'));
     //Success Result 
      { 
@@ -81,6 +92,8 @@ Initialize mpesa library
      }
      
    # reversal
+   This API enables reversal of transactions done
+   
      print_r( $mpesa->reversal('2','254708374149','1','NCR7S1UXBT','PAY NOW VIA WASKSOFT'));
      
   # accountbalance
@@ -89,5 +102,5 @@ Initialize mpesa library
   # transaction status
      print_r($mpesa->transaction_status('NCR7S1UXBT','254708374149','4','apitest'));
   
-  # installation  
-
+ 
+  
