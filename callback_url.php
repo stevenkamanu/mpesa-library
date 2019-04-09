@@ -1,16 +1,13 @@
 <?php
-
-     require_once('../inc/mpesa/TransactionCallbacks.php');
-
-     $callback =  new TransactionCallbacks();
-
+     require_once('../src/TransactionCallbacks.php');
+    $callback =  new TransactionCallbacks();
 
      //Set the response content type to application/json
       header("Content-Type:application/json");
        
      //read incoming request
      //$callbackJSONData=file_get_contents('php://input');
-     $result = json_d$callback->processSTKPushRequestCallback());
+     $result = json_decode($callback->processSTKPushRequestCallback());
      //$result =['post'=> $callbackJSONData,'type'=> 'post'];
      
     if($result)){
