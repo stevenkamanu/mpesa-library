@@ -11,13 +11,14 @@ Mpesa Api library
     
      print_r($mpesa->STKPushQuery('ws_CO_DMZ_297481201_09042019174418021'));    
 ```diff
-    + { "ResponseCode": "0", 
-      "ResponseDescription":"The service request has been accepted successsfully", 
++{ "ResponseCode": "0", 
+"ResponseDescription":"The service request has been accepted successsfully", 
       "MerchantRequestID":"28415-165347-1",
       "CheckoutRequestID":"ws_CO_DMZ_297481201_09042019174418021",
       "ResultCode": "1032", 
       "ResultDesc":"[STK_CB - ]Request cancelled by user" 
       }
+```
       print_r($mpesa->STKPushSimulation('20','254708374149','pay now','test'));
 ```json{ 
      "MerchantRequestID":"16658-1455367-1", 
