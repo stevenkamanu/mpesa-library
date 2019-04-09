@@ -2,14 +2,18 @@
 Mpesa Api library 
 
 # usage
+Initialize mpesa library
+
      $mpesa  = new Mpesa();
      
  # access_token
- 
+  To get access token
+  
      echo " Token : " .$mpesa->oauth_token();  
      Token : zlfUeamewm24r2NjnsgjBlQQANNP
     
  # STKPushQuery
+ 
      
      print_r($mpesa->STKPushQuery('ws_CO_DMZ_297481201_09042019174418021'));        
       //Success Result 
@@ -22,6 +26,8 @@ Mpesa Api library
       }
       
   # STKPushSimulation
+   This feature allows the transaction initiation to be moved from the paying customer's side to the payee Organization's side. This   eliminates the challenge of having to remember business paybill numbers and account numbers and allows customers to simply confirm the transaction by entering their MPesa PIN on their mobile phone. This is done via the STK push/Pop-up which appears on a customer's phone that prompts them to enter their PIN. 
+   
       print_r($mpesa->STKPushSimulation('20','254708374149','pay now','test'));
     //Success Result 
       { 
