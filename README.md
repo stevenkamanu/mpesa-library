@@ -2,13 +2,15 @@
 Mpesa Api library 
 
 #usage
-    
-
-```diff   -$mpesa  = new Mpesa();
+     $mpesa  = new Mpesa();
      
+ # access_token
+ 
      echo " Token : " .$mpesa->oauth_token();  
      Token : zlfUeamewm24r2NjnsgjBlQQANNP
     
+ # STKPushQuery
+     
      print_r($mpesa->STKPushQuery('ws_CO_DMZ_297481201_09042019174418021'));        
      //result
      { "ResponseCode": "0", 
@@ -18,7 +20,8 @@ Mpesa Api library
       "ResultCode": "1032", 
       "ResultDesc":"[STK_CB - ]Request cancelled by user" 
       }
-      
+  # STKPushSimulation
+  
       print_r($mpesa->STKPushSimulation('20','254708374149','pay now','test'));
       //result
       { 
@@ -28,14 +31,27 @@ Mpesa Api library
      "ResponseDescription":"Success. Request accepted for processing", 
      "CustomerMessage":"Success. Request accepted for processing"
      }
-
-     print_r( $mpesa->register_url());                             
+     
+  # register url
+     print_r( $mpesa->register_url());   
+     
+  # c2b
      print_r($mpesa->c2b('120','254708374149','account'));
-     print_r($mpesa->b2c('20','BusinessPayment','254708374149','payment')); //refund
+     
+  # b2c
+     print_r($mpesa->b2c('20','BusinessPayment','254708374149','payment'));
+     
+  #  b2b
      print_r($mpesa->b2b('10000','BusinessPayBill','60000','4','4','paytest','cool'));
+     
+  # accountbalance
      print_r($mpesa->accountbalance('600443','4','remarks'));
+     
+  # reversal
      print_r( $mpesa->reversal('2','254708374149','1','NCR7S1UXBT','PAY NOW VIA WASKSOFT'));
+     
+  # transaction status
      print_r($mpesa->transaction_status('NCR7S1UXBT','254708374149','4','apitest'));
   
-#installation  
+# installation  
 
