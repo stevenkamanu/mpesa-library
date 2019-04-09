@@ -5,6 +5,8 @@ Mpesa Api library
 Initialize mpesa library
 
      $mpesa  = new Mpesa();
+    //get result returned by functions
+    echo  $mpesa->get_message();
      
  # access_token
   To get access token
