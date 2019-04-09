@@ -59,81 +59,66 @@ Mpesa Api library
        "ResponseCode":"0",
        "ResponseDescription": "Accept the service request successfully." 
      }
-     
-  #  b2b
-     print_r($mpesa->b2b('10000','BusinessPayBill','60000','4','4','paytest','cool'));
-    //Success Result 
-     {
-      "ConversationID":  "AG_20180326_00005ca7f7c21d608166",
-       "OriginatorConversationID":  "12363-1328499-6",
-       "ResponseCode":  "0",
-       "ResponseDescription":  "Accept the service request successfully."
-      }
-      
      //callback
+     {
+    "Result":
     {
-     "Result":
-     {
-    "ResultType":0,
-    "ResultCode":0,
-    "ResultDesc":"The service request has been accepted successfully.",
-    "OriginatorConversationID":"8551-61996-3",
-    "ConversationID":"AG_20170727_00006baee344f4ce0796",
-    "TransactionID":"LGR519G2QV",
-    "ResultParameters":
+  "ResultType":0,
+  "ResultCode":0,
+  "ResultDesc":"The service request has been accepted successfully.",
+  "OriginatorConversationID":"14593-80515-2",
+  "ConversationID":"AG_20170821_000049448b24712383de",
+  "TransactionID":"LHL41AHJ6G",
+  "ResultParameters":
+  {
+   "ResultParameter":
+   [
     {
-    "ResultParameter":
-    [
-        {
-    "Key":"InitiatorAccountCurrentBalance",
-    "Value":"{ Amount={BasicAmount=46713.00, MinimumAmount=4671300, CurrencyCode=KES}}"
-     },
-     {
-    "Key":"DebitAccountCurrentBalance",
-    "Value":"{Amount={BasicAmount=46713.00, MinimumAmount=4671300, CurrencyCode=KES}}"
-     },
-     {
-    "Key":"Amount",
-    "Value":10
-     },
-     {
-    Key":"DebitPartyAffectedAccountBalance",
-    "Value":"Working Account|KES|46713.00|46713.00|0.00|0.00"
-     },
-     {
-    "Key":"TransCompletedTime",
-    "Value:"20170727102524
-     },
-     {
-    "Key":"DebitPartyCharges",
-    "Value":"Business Pay Bill Charge|KES|77.00"
-     },
-     {
-    "Key":"ReceiverPartyPublicName",
-    "Value":"603094 - Safaricom3117"
-     },
-     {
-    "Key":"Currency",
-    "Value":"KES"
-     }
-     ]
-    },
-    "ReferenceData":
-    {
-    ReferenceItem":
-     [
-    {
-     "Key":"BillReferenceNumber",
-     "Value":"aaa"
+      "Key":"TransactionAmount",
+      "Value":100
     },
     {
-     "Key":"QueueTimeoutURL",
-      "Value":"https://internalsandbox.safaricom.co.ke/mpesa/b2bresults/v1/submit"
-     }
-     ]
-     }
+      "Key":"TransactionReceipt",
+      "Value":"LHL41AHJ6G"
+    },
+    {
+      "Key":"B2CRecipientIsRegisteredCustomer",
+      "Value":"Y"
+    },
+    {
+      "Key":"B2CChargesPaidAccountAvailableFunds",
+      "Value":0.00
+    },
+    {
+      "Key":"ReceiverPartyPublicName",
+      "Value":"254708374149 - John Doe"
+                                                    },
+    {
+      "Key":"TransactionCompletedDateTime",
+      "Value":"21.08.2017 12:01:59"
+    },
+    {
+      "Key":"B2CUtilityAccountAvailableFunds",
+      "Value":98834.00
+    },
+    {
+      "Key":"B2CWorkingAccountAvailableFunds",
+      "Value":100000.00
     }
+   ]
+  },
+  "ReferenceData":
+  {
+  "ReferenceItem":
+   {
+    "Key":"QueueTimeoutURL",
+    "Value":"https:\/\/internalsandbox.safaricom.co.ke\/mpesa\/b2cresults\/v1\/submit"
    }
+   }
+   }
+  }
+     
+     
       
    # reversal
      print_r( $mpesa->reversal('2','254708374149','1','NCR7S1UXBT','PAY NOW VIA WASKSOFT'));
