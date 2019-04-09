@@ -17,8 +17,8 @@ Mpesa Api library
       "CheckoutRequestID":"ws_CO_DMZ_297481201_09042019174418021",
       "ResultCode": "1032", 
       "ResultDesc":"[STK_CB - ]Request cancelled by user" 
-      }```
-     print_r($mpesa->STKPushSimulation('20','254708374149','pay now','test'));
+      }
+ ```   print_r($mpesa->STKPushSimulation('20','254708374149','pay now','test'));
  ```json{ 
      "MerchantRequestID":"16658-1455367-1", 
      "CheckoutRequestID":"ws_CO_DMZ_435322918_09042019180550656", 
