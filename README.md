@@ -52,6 +52,13 @@ Mpesa Api library
      
   # b2c
      print_r($mpesa->b2c('20','BusinessPayment','254708374149','payment'));
+    //Success Result 
+     { 
+       "ConversationID": "AG_20190409_0000515207592fa5723a", 
+       "OriginatorConversationID": "28412-215980-1", 
+       "ResponseCode":"0",
+       "ResponseDescription": "Accept the service request successfully." 
+     }
      
   #  b2b
      print_r($mpesa->b2b('10000','BusinessPayBill','60000','4','4','paytest','cool'));
