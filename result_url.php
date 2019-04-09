@@ -3,10 +3,8 @@
     header("Content-Type:application/json");
      //read incoming request
     $postData = file_get_contents('php://input');
-    
-    $result = ['type'=>"result" ,'post'=>$postData ];
-    
-    if($mpesa->callback_post($result)){
+     
+    if($mpesa->callback_post($postData)){
         $resp = '{"ResultCode":00000000,"ResultDesc":"Success"}';
   
     }else{
