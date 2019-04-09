@@ -1,5 +1,8 @@
 <?php
 
+    require_once('../src/TransactionCallbacks.php');
+    $callback =  new TransactionCallbacks();
+
     header("Content-Type:application/json");
      //read incoming request
     $postData = file_get_contents('php://input');
