@@ -9,8 +9,9 @@ require_once('inc/Common.php');
 | * @package     mpesa class
 | * @author      steven kamanu
 | * @email       mukamanusteven at gmail dot com
+| * @website     htps://kenyadevlopers.co.ke
 | * @version     1.0
-| * @license     MIT License Copyright (c) 2017 Wasksoft technology
+| * @license     MIT License Copyright (c) 2017 Wasksofts technology
 | *--------------------------------------------------------------------------------------- 
 | *---------------------------------------------------------------------------------------
 */
@@ -642,7 +643,7 @@ require_once('inc/Common.php');
     { 
           $postData =file_get_contents('php://input',1);
           //perform your processing here, e.g. log to file....
-          $file = fopen("https://kenyadevelopers.co.ke/myapi/log/log.txt", "w"); //url fopen should be allowed for this to occur
+          $file = fopen("https://example.com/log/log.txt", "w"); //url fopen should be allowed for this to occur
           if(fwrite($file, $postData) === FALSE)
           {
               fwrite("Error: no data written");
