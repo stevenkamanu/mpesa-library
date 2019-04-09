@@ -7,8 +7,15 @@ Mpesa Api library
      $mpesa  = new Mpesa();
      echo " Token : " .$mpesa->oauth_token();  
      print_r($mpesa->STKPushQuery('ws_CO_DMZ_297481201_09042019174418021'));
-     ``` json
-     { "ResponseCode": "0", "ResponseDescription":"The service request has been accepted successsfully", "MerchantRequestID":"28415-165347-1", "CheckoutRequestID":"ws_CO_DMZ_297481201_09042019174418021", "ResultCode": "1032", "ResultDesc":"[STK_CB - ]Request cancelled by user" } ```
+     ```json
+     { "ResponseCode": "0", 
+      "ResponseDescription":"The service request has been accepted successsfully", 
+      "MerchantRequestID":"28415-165347-1",
+      "CheckoutRequestID":"ws_CO_DMZ_297481201_09042019174418021",
+      "ResultCode": "1032", 
+      "ResultDesc":"[STK_CB - ]Request cancelled by user" 
+      }
+      ```
      
      
      print_r($mpesa->STKPushSimulation('20','254708374149','pay now','test'));
